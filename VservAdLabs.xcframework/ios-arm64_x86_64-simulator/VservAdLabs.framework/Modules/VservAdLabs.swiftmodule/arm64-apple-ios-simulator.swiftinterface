@@ -1,0 +1,62 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name VservAdLabs
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import Foundation
+import Swift
+import UIKit
+import Vmax
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VmaxAdVservAdlabs : ObjectiveC.NSObject, Vmax.VmaxAd {
+  @objc deinit
+  public func prepare(adResponse: Swift.String, delegate: any Vmax.VmaxAdDelegate)
+  public func render(container: UIKit.UIView)
+  public static func getSignatures() -> [Swift.String]
+  public static func getRegexPatternSignatures() -> [Swift.String]
+  public func pause()
+  public func resume()
+  public func close()
+  public func set(adClickBrowser: Vmax.AdClickBrowser)
+  public func set(adInfo: Vmax.VmaxAdInfo)
+  public func getVmaxAdInfo() -> Vmax.VmaxAdInfo?
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.VmaxRefreshableAd {
+  public func shouldProcessRefresh() -> Swift.Bool
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.VmaxCompanionParams {
+  public func set(adParameters width: Swift.Int?, height: Swift.Int?)
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.VmaxWebAssetDelegate {
+  public func onPrepared<T>(asset: any Vmax.VmaxAdAssetHelper, result: T)
+  public func onPrepareFailed(asset: any Vmax.VmaxAdAssetHelper, error: Vmax.VmaxError)
+  public func onRendered<T>(asset: any Vmax.VmaxAdAssetHelper, result: T)
+  public func onRenderFailed(asset: any Vmax.VmaxAdAssetHelper, error: Vmax.VmaxError)
+  public func onClicked(asset: any Vmax.VmaxAdAssetHelper)
+  public func onClickedComplete(asset: any Vmax.VmaxAdAssetHelper)
+  public func onClosed(asset: any Vmax.VmaxAdAssetHelper)
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.VmaxRefreshableAssetDelegate {
+  public func onAdPaused()
+  public func onAdResumed()
+  public func onAdComplete()
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.ViewPortManager {
+  public func addObserverToScrollViews()
+  public func removeObserverFromScrollViews()
+  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+extension VservAdLabs.VmaxAdVservAdlabs : Vmax.VmaxCarouselAd {
+  public func isCardActive() -> Swift.Bool
+  public func swipeMode() -> Vmax.VmaxCarouselSwipeMode
+  public func isAdLoaded() -> Swift.Bool
+  public func getAdWidth() -> Swift.Int
+  public func getAdHeight() -> Swift.Int
+  public func setAdCompletionListener(adCompletionListener: any Vmax.VmaxCarouselAdCompletionListener)
+  public func setAdFocus()
+  public func setAdOutOfFocus()
+  public func setAdIsDisplayedInCarousel(flag: Swift.Bool)
+  public func onAdLoaded()
+}
